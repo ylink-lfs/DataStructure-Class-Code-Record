@@ -23,7 +23,7 @@ public:
 	void erase(const size_t location);
 	void push_back(const T& target);
 	void clear();
-	bool empty();
+	bool empty() const;
 	static const size_t npos = 0xffffffffu;
 };
 
@@ -129,7 +129,7 @@ void sqlist<T>::clear()
 }
 
 template<typename T>
-bool sqlist<T>::empty()
+bool sqlist<T>::empty() const
 {
 	return length == 0 ? true : false;
 }
