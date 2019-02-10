@@ -122,6 +122,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="chap2_algorithm_design.cpp" />
+    <ClCompile Include="decimal_convertor.cpp" />
     <ClCompile Include="polynomial_operation.cpp" />
     <ClCompile Include="application.h" />
     <ClCompile Include="driver.cpp" />
