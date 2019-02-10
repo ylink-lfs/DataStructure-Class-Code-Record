@@ -10,27 +10,28 @@ private:
 	sqlist<T> queue_body;
 	int front, rear;
 public:
-	seq_queue() : front(0), rear(1) { for (int i = 0; i < sqlist<T>::max_size(); i++) queue_body.push_back(T()); }
-	void clear() { queue_body.clear(); front = 0; rear = 1; }
-	size_t size() const { return (rear - front <= 0 ? (sqlist<T>::max_size() + rear - front) : rear - front - 1); }
-	bool empty() const { return ((front + 1) % sqlist<T>::max_size()) == rear; }
+	seq_queue() : front(0), rear(0) { 
+		for (int i = 0; i < sqlist<T>::max_size(); i++) 
+			queue_body.push_back(T()); 
+	}
+	void clear() { front = 0; rear = 0; }
+	size_t size() const { return rear - front; }
+	bool empty() const { return front == rear; }
 	void push(const T& elem);
 	void pop();
-	T top() const { return queue_body[front]; }
+	T top() const { return queue_body[front % sqlist<T>::max_size()]; }
 };
 
 template<typename T>
 void seq_queue<T>::push(const T& elem)
 {
-	if (rear == front)
+	if (rear - front == sqlist<T>::max_size())
 	{
 		std::cerr << "queue is full" << '\n';
 		return;
 	}
-	queue_body[rear - 1] = elem;
+	queue_body[rear % sqlist<T>::max_size()] = elem;
 	rear++;
-	if (rear >= sqlist<T>::max_size())
-		rear = 0;
 }
 template<typename T>
 void seq_queue<T>::pop()
@@ -41,8 +42,6 @@ void seq_queue<T>::pop()
 		return;
 	}
 	front++;
-	if (front >= sqlist<T>::max_size())
-		front = 0;
 }
 
 template<typename T>
