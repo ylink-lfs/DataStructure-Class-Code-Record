@@ -1,21 +1,30 @@
 #include <iostream>
 #include "linear_seq.h"
 #include "linear_linked.h"
+#include "prac_stack.h"
+#include "prac_queue.h"
 #include "application.h"
 
 using namespace std;
 
 int main(void)
 {
-	vector<int> list1({ 3, 5, 8, 11 });
-	vector<int> list2({ 2, 6, 8, 9, 11, 15, 20 });
-	vector<int> res(ordered_union(list1, list2));
-	
-	for (auto elem : res)
+	seq_queue<int> test_queue;
+	cout << test_queue.size() << endl;
+	for (int i = 0; i < 105; i++)
 	{
-		cout << elem << ' ';
+		test_queue.push(i);
+		cout << test_queue.size() << endl;
 	}
-	cout << endl;
+	cout << test_queue.top() << endl;
+	test_queue.pop();
+	test_queue.pop();
+	test_queue.pop();
+	cout << test_queue.size() << endl;
+	test_queue.push(120);
+	test_queue.push(120);
+	test_queue.push(120);
+	cout << test_queue.size() << endl;
 	system("pause");
 	return 0;
 }

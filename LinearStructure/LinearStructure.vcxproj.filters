@@ -21,10 +21,10 @@
     <ClInclude Include="linear_seq.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="parc_stack.h">
+    <ClInclude Include="prac_queue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="prac_queue.h">
+    <ClInclude Include="prac_stack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

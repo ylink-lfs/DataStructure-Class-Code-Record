@@ -23,51 +23,51 @@ polynominal add_polynominal(const polynominal& p1, const polynominal& p2);
 polynominal multiply_polynominal(const polynominal& p1, const polynominal& p2);
 polynominal one_term_multiply(const polynominal_term& term, const polynominal& p);
 void read_polynominal(polynominal& p, int term_num, istream& ist = cin);
-
-int main(void)
-{
-	ios_base::sync_with_stdio(false);
-	cin.tie(nullptr);
-	int max_exp1, max_exp2;
-	while (cin >> max_exp1 >> max_exp2)
-	{
-		polynominal p1;
-		read_polynominal(p1, max_exp1 + 1);
-		polynominal p2;
-		read_polynominal(p2, max_exp2 + 1);
-		polynominal res = multiply_polynominal(p1, p2);
-		for (auto it = res.begin(); it != res.end(); it++)
-		{
-			cout << it->factor;
-			auto assist_it = it;
-			assist_it++;
-			if (assist_it == res.end())
-			{
-				if (res.size() < max_exp1 + max_exp2 + 1)
-				{
-					for (int j = 0; j < max_exp1 + max_exp2 - it->exponent; j++)
-					{
-						cout << ' ' << 0;
-					}
-				}
-				cout << '\n';
-			}
-			else
-			{
-				if (it->exponent + 1 != assist_it->exponent)
-				{
-					for (int i = 0; i < assist_it->exponent - it->exponent - 1; i++)
-					{
-						cout << ' ' << 0;
-					}
-				}
-				cout << ' ';
-			}
-		}
-		
-	}
-	return 0;
-}
+//
+//int main(void)
+//{
+//	ios_base::sync_with_stdio(false);
+//	cin.tie(nullptr);
+//	int max_exp1, max_exp2;
+//	while (cin >> max_exp1 >> max_exp2)
+//	{
+//		polynominal p1;
+//		read_polynominal(p1, max_exp1 + 1);
+//		polynominal p2;
+//		read_polynominal(p2, max_exp2 + 1);
+//		polynominal res = multiply_polynominal(p1, p2);
+//		for (auto it = res.begin(); it != res.end(); it++)
+//		{
+//			cout << it->factor;
+//			auto assist_it = it;
+//			assist_it++;
+//			if (assist_it == res.end())
+//			{
+//				if (res.size() < max_exp1 + max_exp2 + 1)
+//				{
+//					for (int j = 0; j < max_exp1 + max_exp2 - it->exponent; j++)
+//					{
+//						cout << ' ' << 0;
+//					}
+//				}
+//				cout << '\n';
+//			}
+//			else
+//			{
+//				if (it->exponent + 1 != assist_it->exponent)
+//				{
+//					for (int i = 0; i < assist_it->exponent - it->exponent - 1; i++)
+//					{
+//						cout << ' ' << 0;
+//					}
+//				}
+//				cout << ' ';
+//			}
+//		}
+//		
+//	}
+//	return 0;
+//}
 
 polynominal add_polynominal(const polynominal& p1, const polynominal& p2)
 {

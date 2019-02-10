@@ -10,10 +10,10 @@ private:
 	sqlist<T> queue_body;
 	int front, rear;
 public:
-	seq_queue() : front(0), rear(1) {}
+	seq_queue() : front(0), rear(1) { for (int i = 0; i < sqlist<T>::max_size(); i++) queue_body.push_back(T()); }
 	void clear() { queue_body.clear(); front = 0; rear = 1; }
-	size_t size() const { return (rear - front < 0 ? (sqlist<T>::max_size() + rear - front) : rear - front) - 1; }
-	bool empty() const { return rear - front == 1; }
+	size_t size() const { return (rear - front <= 0 ? (sqlist<T>::max_size() + rear - front) : rear - front - 1); }
+	bool empty() const { return ((front + 1) % sqlist<T>::max_size()) == rear; }
 	void push(const T& elem);
 	void pop();
 	T top() const { return queue_body[front]; }
@@ -50,8 +50,8 @@ class lk_queue
 {
 private:
 	Forward_list<T> queue_body;
-	Forward_list<T>::iterator rear;
-	Forward_list<T>::iterator front;
+	typename Forward_list<T>::iterator rear;
+	typename Forward_list<T>::iterator front;
 public:
 	lk_queue() { queue_body.push_front(T()); rear = front = queue_body.begin(); }
 	void clear() { 

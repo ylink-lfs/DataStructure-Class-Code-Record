@@ -17,7 +17,7 @@ public:
 	T& operator[](const size_t i);
 	const T& operator[](const size_t i) const;
 	size_t size() const;
-	static size_t max_size() const { return MAXsize; }
+	static size_t max_size() { return sqlist::MAXsize; }
 	size_t find(const T& target) const;
 	void insert(const T& target, const size_t location);
 	void erase(const size_t location);

@@ -20,7 +20,7 @@ public:
 template<typename T>
 void seq_stack<T>::push(const T& elem)
 {
-	if (stack_body.size == stack_body.max_size)
+	if (stack_body.size() == stack_body.max_size())
 	{
 		std::cerr << "Stack is full" << '\n';
 		return;

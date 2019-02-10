@@ -117,7 +117,7 @@
   <ItemGroup>
     <ClInclude Include="linear_linked.h" />
     <ClInclude Include="linear_seq.h" />
-    <ClInclude Include="parc_stack.h" />
+    <ClInclude Include="prac_stack.h" />
     <ClInclude Include="prac_queue.h" />
   </ItemGroup>
   <ItemGroup>
