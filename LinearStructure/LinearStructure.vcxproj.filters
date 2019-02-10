@@ -38,7 +38,7 @@
     <ClCompile Include="polynomial_operation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="algorithm_design.cpp">
+    <ClCompile Include="chap2_algorithm_design.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

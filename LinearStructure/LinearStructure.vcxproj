@@ -121,7 +121,7 @@
     <ClInclude Include="prac_queue.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="algorithm_design.cpp" />
+    <ClCompile Include="chap2_algorithm_design.cpp" />
     <ClCompile Include="polynomial_operation.cpp" />
     <ClCompile Include="application.h" />
     <ClCompile Include="driver.cpp" />
