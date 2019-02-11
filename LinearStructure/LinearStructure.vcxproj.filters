@@ -32,9 +32,6 @@
     <ClCompile Include="driver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="application.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="polynomial_operation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -43,6 +40,12 @@
     </ClCompile>
     <ClCompile Include="decimal_convertor.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="haoni.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="chap2_application.h">
+      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

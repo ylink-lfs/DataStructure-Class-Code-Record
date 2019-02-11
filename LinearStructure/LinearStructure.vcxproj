@@ -123,8 +123,9 @@
   <ItemGroup>
     <ClCompile Include="chap2_algorithm_design.cpp" />
     <ClCompile Include="decimal_convertor.cpp" />
+    <ClCompile Include="haoni.cpp" />
     <ClCompile Include="polynomial_operation.cpp" />
-    <ClCompile Include="application.h" />
+    <ClCompile Include="chap2_application.h" />
     <ClCompile Include="driver.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

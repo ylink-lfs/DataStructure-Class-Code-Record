@@ -9,16 +9,16 @@ using namespace std;
 string decimal_convertor(const string& input, int radix = 8);
 string actual_convertor(string str, int radix = 8);
 
-int main(void)
-{
-	string digit_input;
-	while (cin >> digit_input)
-	{
-		cout << decimal_convertor(digit_input) << endl;
-	}
-	system("pause");
-	return 0;
-}
+//int main(void)
+//{
+//	string digit_input;
+//	while (cin >> digit_input)
+//	{
+//		cout << decimal_convertor(digit_input) << endl;
+//	}
+//	system("pause");
+//	return 0;
+//}
 
 string decimal_convertor(const string& input, int radix)
 {

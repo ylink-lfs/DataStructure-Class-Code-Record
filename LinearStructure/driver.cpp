@@ -3,7 +3,6 @@
 #include "linear_linked.h"
 #include "prac_stack.h"
 #include "prac_queue.h"
-#include "application.h"
 
 using namespace std;
 
