@@ -6,24 +6,20 @@
 
 using namespace std;
 
-//int main(void)
-//{
-//	seq_queue<int> test_queue;
-//	cout << test_queue.size() << endl;
-//	for (int i = 0; i < 105; i++)
-//	{
-//		test_queue.push(i);
-//		cout << test_queue.size() << endl;
-//	}
-//	cout << test_queue.top() << endl;
-//	test_queue.pop();
-//	test_queue.pop();
-//	test_queue.pop();
-//	cout << test_queue.size() << endl;
-//	test_queue.push(120);
-//	test_queue.push(120);
-//	test_queue.push(120);
-//	cout << test_queue.size() << endl;
-//	system("pause");
-//	return 0;
-//}
+bool check_parentheses(const string& str);
+
+int main(void)
+{
+	string input("(()]");
+	if (check_parentheses(input))
+	{
+		cout << "Parentheses match successfully.\n";
+	}
+	else
+	{
+		cout << "Match failed.\n";
+	}
+
+	system("pause");
+	return 0;
+}

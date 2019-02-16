@@ -38,14 +38,14 @@
     <ClCompile Include="chap2_algorithm_design.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="decimal_convertor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="haoni.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="chap2_application.h">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="chap3_application.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

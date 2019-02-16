@@ -1,3 +1,4 @@
+//Chap 3 Section 4, haoni implementation
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -9,14 +10,6 @@ int count_move = 0;
 
 void haoni(int plate_count);
 void haoni(int plate_id, char mv_from, char mv_to, char assist);
-
-int main(void)
-{
-	ios_base::sync_with_stdio(false);
-	haoni(11);
-	system("pause");
-	return 0;
-}
 
 void haoni(int plate_count)
 {
