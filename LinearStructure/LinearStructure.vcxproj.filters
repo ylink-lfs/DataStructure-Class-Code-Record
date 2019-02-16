@@ -47,5 +47,8 @@
     <ClCompile Include="chap3_application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="chap3_algorithm_design.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -116,7 +116,7 @@ double evaluate_infix_expression(const string& str)
 			while (i + num_len < str.size() && (isdigit(str[i + num_len]) || str[i + num_len] == '.'))
 				num_len++;
 			//7 is dummy number, change it freely
-			postfix_expression.push_back({ static_cast<char>(7), stoi(str.substr(i, num_len)), false });
+			postfix_expression.push_back({ static_cast<char>(7), stod(str.substr(i, num_len)), false });
 			i += (num_len - 1);
 		}
 
