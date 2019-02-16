@@ -33,7 +33,7 @@ struct double_stack
 		top[0] = bot[0] = -1;
 		top[1] = bot[1] = mx_elements;
 	}
-	bool empty(int which = 0) const { return which ? (top[1] == max_elements) : (top[0] == 1); }
+	bool empty(int which = 0) const { return which ? (top[1] == max_elements) : (top[0] == -1); }
 	bool full() const { return top[0] + 1 == top[1]; }
 	void push(const T& elem, int which = 0)
 	{
@@ -145,7 +145,7 @@ bool stack_operation_validation(const string& str)
 			return false;
 		}
 	}
-	return balance_factor >= 0;
+	return balance_factor == 0;
 }
 
 //Textbook Exercise 3.2.(6)
@@ -190,12 +190,13 @@ struct linked_queue
 {
 	circulate_linked_list list;
 	list_node* rear;
-	linked_queue() { rear = list.rear_ptr; }
+	linked_queue() { rear = list.rear_ptr; list.rear_ptr->next = list.head_ptr; }
 	bool empty() const { return rear->next == rear; }
 	void clear()
 	{
 		list.clear();
 		rear = list.rear_ptr;
+		list.rear_ptr->next = list.head_ptr;
 	}
 	void enqueue(const int x)
 	{
@@ -217,6 +218,8 @@ struct linked_queue
 
 //Textbook Exercise 3.2.(7)
 //Also use int as element type
+
+//Note that in fact, I reversed the meaning of rear and front.
 struct linear_queue
 {
 	static const int queue_size = 100;
@@ -263,6 +266,7 @@ struct bidirectional_queue
 	int Q[queue_size];
 	int frnt, rear;
 	int balance_fac;
+	bidirectional_queue() : frnt(0), rear(0), balance_fac(0) {}
 	bool full() const { return balance_fac >= queue_size - 1; }
 	bool empty() const { return frnt == rear; }
 	void push_front(const int x)
@@ -316,7 +320,20 @@ int Ack(int m, int n)
 
 int Ack_nonrc(int m, int n)
 {
-
+	int akm[100][100];
+	for (int j = 0; j < 100; j++)
+	{
+		akm[0][j] = j + 1;
+	}
+	for (int i = 1; i <= m; i++)
+	{
+		akm[i][0] = akm[i - 1][1];
+		for (int j = 1; j <= n; j++)
+		{
+			akm[i][j] = akm[i - 1][akm[i][j - 1]];
+		}
+	}
+	return akm[m][n];
 }
 
 //Textbook Exercise 3.2.(10)
@@ -329,6 +346,16 @@ void maxval(int& cur_max, list_node* head)
 		if (cur_max < head->val)
 			cur_max = head->val;
 		maxval(cur_max, head->next);
+	}
+}
+int maxval(list_node* p)
+{
+	if (!p->next)
+		return p->val;
+	else
+	{
+		int maxv = maxval(p->next);
+		return p->val > maxv ? p->val : maxv;
 	}
 }
 
@@ -351,5 +378,15 @@ void node_avg(list_node* head, int& depth,double& cur_num)
 		depth++;
 		cur_num += head->val;
 		node_avg(head->next, depth, cur_num);
+	}
+}
+double node_avg(list_node* p, int n)
+{
+	if (!p->next)
+		return p->val;
+	else
+	{
+		double ave = node_avg(p->next, n - 1);
+		return (ave * (n - 1) + p->val) / n;
 	}
 }
